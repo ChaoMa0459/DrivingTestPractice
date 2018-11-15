@@ -9,3 +9,12 @@ Create below deliverables for your final project
 Assignment 8:
 Develop REST api using nodejs, and mongodb for the final project. Your server code should be under server folder of your final project github repo.
 Use the same final project link from Assignment 7.
+
+Final Project:
+These are some of the ideas for your project. You can work on anything from this list or you can develop your own idea.
+1. Messaging app (Like whatsapp)
+2. Task planner app (LIke google calendar)
+3. Expense tracker (Like mint)
+4. Home search app (like zillow or redfin)
+5. Online image editor app
+6. Build an app using any open apis (https://github.com/toddmotto/public-apis)

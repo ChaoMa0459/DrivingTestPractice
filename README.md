@@ -21,3 +21,5 @@ These are some of the ideas for your project. You can work on anything from this
 5. Online image editor app
 6. Build an app using any open apis (https://github.com/toddmotto/public-apis)
 
+## Domain Model:
+https://github.com/neu-mis-info6150-fall-2018/final-project-bbq/blob/master/BBQ%20Diagram.svg

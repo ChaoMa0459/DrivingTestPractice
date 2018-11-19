@@ -8,6 +8,7 @@ Create below deliverables for your final project
 
 ## Assignment 8:
 Develop REST api using nodejs, and mongodb for the final project. Your server code should be under server folder of your final project github repo.
+
 Implement at least 4 user stories per team (or one user story for each team member) for the final project. It should have your MongoDB design, REST API and Angular UI. Each team member should be able to present it to the TA.
 Your Nodejs app and Angular app should be in separate directories on the Github repo.
 

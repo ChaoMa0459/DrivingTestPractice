@@ -30,18 +30,25 @@ export class UserLoginComponent implements OnInit {
       return;
     }
     this.username = form.value.username;
-    const user: User = {
+    this.password = form.value.password;
+    // const user: User = {
 
-      username: form.value.username,
-      password: form.value.password,
-      // userType: form.value.userType
-    };
+    //   username: form.value.username,
+    //   password: form.value.password,
+    //   userType: form.value.userType
+    // };
     // console.log(user)
     // this.questionService.addQuestion(question);
     this.userLoginService.getUser(this.username).subscribe((data: object) => {
 
       this.user = data;
       console.log('this.questions:', this.user);
+
+      if (this.password === data[0].password) {
+        alert('Login Success!');
+      }else{
+        alert('failed, please check.')
+      }
 
     });
 

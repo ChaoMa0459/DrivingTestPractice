@@ -21,6 +21,6 @@ export class UserLoginService {
   // }
 
   getUser(username){
-    return this.http.get(`${this.uri}/:${username}`);
+    return this.http.get(`${this.uri}/${username}`);
   }
 }

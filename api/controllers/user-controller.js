@@ -31,5 +31,5 @@ exports.get = function (request, response) {
     response.status(200);
     response.json(user);
   };
-  userService.get(request.params.username, callback);
+  userService.search({username: request.params.username}, callback);
 };

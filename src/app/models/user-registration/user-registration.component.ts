@@ -21,6 +21,7 @@ export class UserRegistrationComponent implements OnInit {
   
   username = '';
   password = '';
+  rePassword = '';
   emailID = '';
 
   onAddUser(form: NgForm){
@@ -37,6 +38,6 @@ export class UserRegistrationComponent implements OnInit {
     console.log(user);
 
     this.userRegistrationService.addUser(user);
-
+    alert('success!')
   }
 }

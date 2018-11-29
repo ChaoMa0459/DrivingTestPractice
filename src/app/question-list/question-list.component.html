@@ -1,0 +1,24 @@
+<div>
+    <strong>Questions:</strong>
+
+    <ul class="unstyled">
+        <li *ngFor="let question of questions let quesId = index;">
+            <strong class="question">{{ question.questionText }}</strong>
+            <ul class="unstyled" id="quest_quesId">
+        <li *ngFor="let answer of question.answers; let ansId = index;">
+                <label class="isCorrect_{{answer.selected}}" for="quest_{{quesId}}_answer_{{ansId}}">
+                    <input type="radio" id="quest_{{quesId}}_answer_{{ansId}}" ng-model="answers[quesId]"
+                        value="{{ answer.answerText }}" name="quest_{{quesId}}_answers" />
+                        {{ answer.answerText}}
+                </label>
+        </li>
+    </ul>
+    </li>
+    </ul>
+    <button class="btn" type="submit" (click)="showResult()">Submit</button>
+    <div class="well">
+        <p>you got {{ correctCount }} out of {{questions.length}} right</p>
+
+    </div>
+
+</div>

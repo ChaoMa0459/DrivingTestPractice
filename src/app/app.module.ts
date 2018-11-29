@@ -10,6 +10,7 @@ import { AddQuestionsComponent } from './models/admin_addQuestions/add-questions
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './models/header/header.component';
 import { AddQuestionDisplayComponent } from './models/admin_addQuestions/add-question-display/add-question-display.component';
+import { AdminAddQuestionsComponent } from './models/admin_addQuestions/admin-add-questions/admin-add-questions.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddQuestionDisplayComponent } from './models/admin_addQuestions/add-que
     QuestionListComponent,
     AddQuestionsComponent,
     HeaderComponent,
-    AddQuestionDisplayComponent
+    AddQuestionDisplayComponent,
+    AdminAddQuestionsComponent
   ],
   imports: [
     BrowserModule,

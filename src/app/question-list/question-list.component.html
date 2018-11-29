@@ -1,4 +1,4 @@
-<div>
+<div class="question_list">
     <strong>Questions:</strong>
 
     <ul class="unstyled">
@@ -7,7 +7,7 @@
             <ul class="unstyled" id="quest_quesId">
         <li *ngFor="let answer of question.answers; let ansId = index;">
                 <label class="isCorrect_{{answer.selected}}" for="quest_{{quesId}}_answer_{{ansId}}">
-                    <input type="radio" id="quest_{{quesId}}_answer_{{ansId}}" ng-model="answers[quesId]"
+                    <input type="radio" id="quest_{{quesId}}_answer_{{ansId}}" [(ngModel)]="answers[quesId]"
                         value="{{ answer.answerText }}" name="quest_{{quesId}}_answers" />
                         {{ answer.answerText}}
                 </label>

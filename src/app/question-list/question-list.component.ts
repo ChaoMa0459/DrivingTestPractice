@@ -16,21 +16,20 @@ export class QuestionListComponent implements OnInit {
   ngOnInit() {
 
       this.questions = require('src/app/questions.json');
-      this.answers = {};
-      this.correctCount = 0;
+      this.answers = {}; // bind with the selected answers
+      this.correctCount = 0; // count the number of correct answers
   }
 
   showResult(): void {
-    console.log("Submit button clicked");
     this.correctCount = 0;
     var qLength = Object.keys(this.questions).length;
     for (var i = 0; i < qLength; i++) {
       var answers = this.questions[i].answers;
       this.questions[i].userAnswerCorrect = false;
-      this.questions[i].userAnswer = this.answers[i];
+      this.questions[i].userAnswer = this.answers[i]; // record user answer
+
       for (var j = 0; j < answers.length; j++) {
         answers[j].selected = "donno";
-        // never go into if condition
         if (this.questions[i].userAnswer === answers[j].answerText && answers[j].correct === true) {
           this.questions[i].userAnswerCorrect = true;
           answers[j].selected = "true";
@@ -41,9 +40,9 @@ export class QuestionListComponent implements OnInit {
         }
       }
     }
-    console.log(this.correctCount);
-    console.log(Object.keys(this.questions).length);
-    //console.log(this.answers);
+    // console.log(this.correctCount);
+    // console.log(Object.keys(this.questions).length);
+    // console.log(this.answers);
 
 };
 

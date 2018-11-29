@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule } from "@angular/material";
+import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatRadioModule } from "@angular/material";
 
 import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +28,8 @@ import { AddQuestionDisplayComponent } from './models/admin_addQuestions/add-que
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

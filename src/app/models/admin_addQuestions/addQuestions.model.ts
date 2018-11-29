@@ -4,4 +4,5 @@ export interface Question {
   selectionB: string,
   selectionC: string,
   selectionD: string
+  answer: string;
 }

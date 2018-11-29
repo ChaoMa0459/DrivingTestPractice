@@ -32,8 +32,10 @@ export class AddQuestionsComponent implements OnInit {
       selectionA: form.value.selectionA,
       selectionB: form.value.selectionB,
       selectionC: form.value.selectionC,
-      selectionD: form.value.selectionD
+      selectionD: form.value.selectionD,
+      answer: form.value.answer
     }
+    console.log(question)
     this.questionService.addQuestion(question);
   }
 }

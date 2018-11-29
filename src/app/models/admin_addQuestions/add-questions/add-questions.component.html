@@ -20,6 +20,14 @@
     <mat-form-field>
       <input matInput placeholder="Selection D" name="selectionD" ngModel>
     </mat-form-field>
+    <mat-radio-group name="answer" ngModel #answer="ngModel" required>
+
+      <mat-radio-button value="A">A</mat-radio-button>
+      <mat-radio-button value="B">B</mat-radio-button>
+      <mat-radio-button value="C">C</mat-radio-button>
+      <mat-radio-button value="D">D</mat-radio-button>
+      <mat-error *ngIf="answer.invalid">Please select an answer</mat-error>
+    </mat-radio-group>
     <button mat-raised-button color="primary" type="submit">Save Question</button>
   </form>
 

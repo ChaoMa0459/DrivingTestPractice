@@ -34,7 +34,6 @@ export class QuestionListComponent implements OnInit {
           this.questions[i].userAnswerCorrect = true;
           answers[j].selected = "true";
           this.correctCount++;
-          console.log("correctCount++");
         } else if (this.questions[i].userAnswer === answers[j].answerText && answers[j].correct === false) {
           answers[j].selected = "false";
         }
@@ -42,7 +41,7 @@ export class QuestionListComponent implements OnInit {
     }
     // console.log(this.correctCount);
     // console.log(Object.keys(this.questions).length);
-    // console.log(this.answers);
+    console.log(this.answers);
 
 };
 

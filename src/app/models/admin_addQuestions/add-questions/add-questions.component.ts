@@ -1,7 +1,8 @@
-import {Component, OnInit, EventEmitter, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { Question } from "../addQuestion.model";
+import { Question } from "../addQuestions.model";
 import {NgForm} from "@angular/forms";
+import {AddQuestionService} from "../addQuestions.service";
 
 @Component({
   selector: 'app-add-questions',
@@ -10,7 +11,7 @@ import {NgForm} from "@angular/forms";
 })
 export class AddQuestionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public questionService: AddQuestionService) { }
 
   ngOnInit() {
   }
@@ -21,7 +22,6 @@ export class AddQuestionsComponent implements OnInit {
   selectionC = '';
   selectionD = '';
 
-  @Output() questionCreate = new EventEmitter<Question>();
 
   onAddQuestion(form: NgForm){
     if(form.invalid){
@@ -34,6 +34,6 @@ export class AddQuestionsComponent implements OnInit {
       selectionC: form.value.selectionC,
       selectionD: form.value.selectionD
     }
-    this.questionCreate.emit(question);
+    this.questionService.addQuestion(question);
   }
 }

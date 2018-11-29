@@ -2,14 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
-import { QuestionListComponent } from './question-list/question-list.component';
+import { QuestionListComponent } from './models/question-list/question-list.component';
+import { AddQuestionsComponent } from './models/add-questions/add-questions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionListComponent
+    QuestionListComponent,
+    AddQuestionsComponent
   ],
   imports: [
     BrowserModule,

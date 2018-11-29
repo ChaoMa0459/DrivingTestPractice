@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-add-questions',
   templateUrl: './add-questions.component.html',
@@ -12,4 +14,8 @@ export class AddQuestionsComponent implements OnInit {
   ngOnInit() {
   }
 
+  questionTitle = '';
+  onAddPost(){
+
+  }
 }

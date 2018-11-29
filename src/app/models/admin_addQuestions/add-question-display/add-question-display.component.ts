@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Question } from "../addQuestion.model";
 
 @Component({
   selector: 'app-add-question-display',
@@ -11,5 +13,8 @@ export class AddQuestionDisplayComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  @Input() questions: Question[] = [];
+
 
 }

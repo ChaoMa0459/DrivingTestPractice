@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuestionListComponent } from './question-list/question-list.component';
+import { AddQuestionsComponent } from './add-questions/add-questions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionListComponent
+    QuestionListComponent,
+    AddQuestionsComponent
   ],
   imports: [
     BrowserModule,

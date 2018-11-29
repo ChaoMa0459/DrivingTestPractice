@@ -1,0 +1,19 @@
+<mat-card>
+  <form (submit)="onAddUser(userForm)" #userForm="ngForm">
+    <mat-form-field>
+      <input matInput placeholder="Username" name="username" required ngModel #username="ngModel">
+      <mat-error *ngIf="username.invalid">Please enter username</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password" name="password" ngModel required #password="ngModel">
+      <mat-error *ngIf="password.invalid">Please enter password</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="EmailID" name="emailID" ngModel required #emailID="ngModel">
+      <mat-error *ngIf="emailID.invalid">Please enter emailID</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Register</button>
+  </form>
+
+</mat-card>

@@ -34,7 +34,7 @@ export class UserLoginComponent implements OnInit {
 
       username: form.value.username,
       password: form.value.password,
-      userType: form.value.userType
+      // userType: form.value.userType
     };
     // console.log(user)
     // this.questionService.addQuestion(question);

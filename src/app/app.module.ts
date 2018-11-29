@@ -13,6 +13,7 @@ import { HeaderComponent } from './models/header/header.component';
 import { AddQuestionDisplayComponent } from './models/admin_addQuestions/add-question-display/add-question-display.component';
 import { AdminAddQuestionsComponent } from './models/admin_addQuestions/admin-add-questions/admin-add-questions.component';
 import { UserLoginComponent } from './models/user-login/user-login.component';
+import { UserRegistrationComponent } from './models/user-registration/user-registration.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UserLoginComponent } from './models/user-login/user-login.component';
     HeaderComponent,
     AddQuestionDisplayComponent,
     AdminAddQuestionsComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    UserRegistrationComponent
   ],
   imports: [
     BrowserModule,

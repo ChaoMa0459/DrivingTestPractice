@@ -3,13 +3,13 @@ const express = require('express');
 
 
 module.exports = function (app) {
-  const questionController = require('../controllers/user-controller');
-  // Sticky Routes for search and create.
-  // app.route('/addQuestions/add')//!!!!!!!!!!!!!!!!!!!!!!!!!!!require to change
-  // .get(questionController.list)
-  //  .post(userController.post);
+  const userController = require('../controllers/user-controller');
 
-  app.route('/login/:username')
-    .get(questionController.get);
+  app.route('/registration/add')
+  // .get(questionController.list)
+   .post(userController.post);
+
+  // app.route('/login/:username')
+  //   .get(questionController.get);
 
 };

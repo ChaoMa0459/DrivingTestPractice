@@ -10,12 +10,12 @@ let user = new Schema({
     type: String,
     required: "password is required"
   },
-  userType: {
-    type: String,
-    required: "user type is required"
-  }
+  // userType: {
+  //   type: String,
+  //   required: "user type is required"
+  // }
 }, {
-  collection: 'user'
+  collection: 'users'
 });
 
 module.exports = mongoose.model('users', user);

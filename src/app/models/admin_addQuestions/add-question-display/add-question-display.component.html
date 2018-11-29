@@ -1,0 +1,14 @@
+<mat-accordion multi="true" *ngIf="questions.length > 0">
+  <mat-expansion-panel *ngFor="let question of questions">
+    <mat-expansion-panel-header>
+      {{ question.title }}
+    </mat-expansion-panel-header>
+    <p>A: {{ question.selectionA }}</p>
+    <p>B: {{ question.selectionB }}</p>
+    <p>C: {{ question.selectionC }}</p>
+    <p>D: {{ question.selectionD }}</p>
+    <p>Correct Answer: {{ question.answer }}</p>
+
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text" *ngIf="questions.length <= 0">No question add yet!</p>

@@ -1,0 +1,26 @@
+<mat-card>
+  <form (submit)="onAddQuestion(questionForm)" #questionForm="ngForm">
+    <mat-form-field>
+      <!--<textarea matInput rows="6" [(ngModel)]="questionTitle"></textarea>-->
+      <textarea matInput placeholder="Question Title" name="questionTitle" required ngModel #questionTitle="ngModel"></textarea>
+      <mat-error *ngIf="questionTitle.invalid">Please enter a question title</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Selection A" name="selectionA" required ngModel #selectionA="ngModel">
+      <mat-error *ngIf="selectionA.invalid">Please enter selection A</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Selection B" name="selectionB" required ngModel #selectionB="ngModel">
+      <mat-error *ngIf="selectionB.invalid">Please enter selection B</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Selection C" name="selectionC" required ngModel #selectionC="ngModel">
+      <mat-error *ngIf="selectionC.invalid">Please enter selection C</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Selection D" name="selectionD" ngModel>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Save Question</button>
+  </form>
+
+</mat-card>

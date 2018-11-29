@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatRadioModule } from "@angular/material";
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +32,8 @@ import { AdminAddQuestionsComponent } from './models/admin_addQuestions/admin-ad
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

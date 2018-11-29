@@ -1,6 +1,6 @@
 'use strict';
 const mongoose = require('mongoose'),
-  Question = mongoose.model('questions');
+  Question = mongoose.model('question');
 
 let throwError = function (error) {
   if (error) {

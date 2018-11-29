@@ -7,9 +7,7 @@ let express = require('express'),
 const app = express();
 
 
-mongoose.connect('mongodb://localhost:27017/BBQ', {
-  useMongoClient: true
-}).then(
+mongoose.connect('mongodb://localhost:27017/BBQ').then(
   () => {console.log('Database is connected') },
     err => { console.log('Can not connect to the database'+ err)}
     );
@@ -19,6 +17,13 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 let initApp = require('./api/app');
 initApp(app);

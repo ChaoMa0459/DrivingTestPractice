@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription} from "rxjs";
-import { Question } from "../admin_addQuestions/addQuestions.model";
+import { Subscription } from "rxjs";
+import { QuestionList } from "./question-list.model";
 import { QuestionListService } from './question-list.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { QuestionListService } from './question-list.service';
 })
 export class QuestionListComponent implements OnInit {
 
-  questions: object;
+  data: object;
+  questions = [];
   answers: object;
   correctCount: number;
 
@@ -21,18 +22,18 @@ export class QuestionListComponent implements OnInit {
 
   ngOnInit() {
 
-      this.questionService.getQuestionList().subscribe((data: object) => {
+    this.questionService.getQuestionList().subscribe((data: object) => {
 
-        this.questions = data;
-        console.log('this.questions:', this.questions);
-        this.convertData(data);
+      this.data = data;
+      console.log('this.data:', this.data);
+      this.convertData(data);
 
-      });
+    });
 
-      // this.questions = require('src/app/questions.json');
+    // this.questions = require('src/app/questions.json');
 
-      this.answers = {}; // bind with the selected answers
-      this.correctCount = 0; // count the number of correct answers
+    this.answers = {}; // bind with the selected answers
+    this.correctCount = 0; // count the number of correct answers
   }
 
   showResult(): void {
@@ -58,12 +59,35 @@ export class QuestionListComponent implements OnInit {
     // console.log(Object.keys(this.questions).length);
     console.log(this.answers);
 
-};
+  };
 
-convertData(data: object): any {
-  var newData = {};
-  
-}
+  convertData(data: object): any {
+
+    for (var i = 0; i < Object.keys(data).length; i++) {
+      var quesItem = {
+        'title': this.data[i].title,
+        'answers': [],
+      };
+      quesItem["answers"].push({
+        "answerText": data[i].selectionA,
+        "correct": data[i].answer === 'A'
+      });
+      quesItem["answers"].push({
+        "answerText": data[i].selectionB,
+        "correct": data[i].answer === 'B'
+      });
+      quesItem["answers"].push({
+        "answerText": data[i].selectionC,
+        "correct": data[i].answer === 'C'
+      });
+      quesItem["answers"].push({
+        "answerText": data[i].selectionD,
+        "correct": data[i].answer === 'D'
+      });
+      this.questions[i] = quesItem;
+    }
+    console.log('this.questions:', this.questions);
+  }
 
 }
 

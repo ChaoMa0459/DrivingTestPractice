@@ -1,6 +1,6 @@
 // const mocha = require('mocha');
 const assert = require('assert');
-var MarioChar = require('../models/questions');
+var MarioChar = require('../api/questions');
 
 
 // describe tests

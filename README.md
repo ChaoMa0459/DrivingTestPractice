@@ -1,6 +1,23 @@
 # final-project-bbq
 final-project-bbq created by GitHub Classroom
 
+# How to Run:
+Clone this repo into local directory.
+Open terminal and run these commands:
+$ cd <local project directory>
+$ npm install
+$ export PATH=<local mongodb directory>/bin:$PATH
+$ mogod
+$ ng start
+$ node server.js
+  
+You can access the app at http://localhost:4200/.
+
+Urls:
+Add Questions: http://localhost:4200/addQuestions
+Answer Questions: http://localhost:4200/answerQuestions
+
+
 ## Assignment 7:
 Create below deliverables for your final project
 1. Write user stories following this guidelines https://www.atlassian.com/agile/project-management/user-stories on the README.md file.

@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './models/header/header.component';
 import { AddQuestionDisplayComponent } from './models/admin_addQuestions/add-question-display/add-question-display.component';
 import { AdminAddQuestionsComponent } from './models/admin_addQuestions/admin-add-questions/admin-add-questions.component';
+import { UserLoginComponent } from './models/user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AdminAddQuestionsComponent } from './models/admin_addQuestions/admin-ad
     AddQuestionsComponent,
     HeaderComponent,
     AddQuestionDisplayComponent,
-    AdminAddQuestionsComponent
+    AdminAddQuestionsComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,

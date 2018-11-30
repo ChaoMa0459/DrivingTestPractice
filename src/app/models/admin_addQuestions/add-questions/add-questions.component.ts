@@ -25,7 +25,7 @@ export class AddQuestionsComponent implements OnInit {
 
   onAddQuestion(form: NgForm){
     if(form.invalid){
-      return
+      return;
     }
     const question: Question = {
       title: form.value.questionTitle,

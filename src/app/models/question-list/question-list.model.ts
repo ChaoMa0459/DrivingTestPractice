@@ -2,7 +2,7 @@ export interface QuestionList {
     title: string,
     answers: object;
   }
-  
+
     // [
     //   {
     //     "questionText": "Why is the sky blue?", "answers": [
@@ -12,3 +12,10 @@ export interface QuestionList {
     //     ]
     //   }
     // ]
+
+    // selectionA: string,
+    // selectionB: string,
+    // selectionC: string,
+    // selectionD: string,
+    // answer: string;
+

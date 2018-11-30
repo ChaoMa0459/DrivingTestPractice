@@ -16,3 +16,21 @@ exports.save = function (user, callback) {
     };
   newUser.save(resultCallback);
 };
+
+exports.search = function (params, callback) {
+  let resultCallback = function (err, users) {
+    throwError(err);
+    callback(users);
+  };
+  User.find(params, resultCallback);
+};
+
+
+exports.get = function (username, callback) {
+  let resultCallback = function (err, user) {
+    throwError(err);
+    callback(user);
+  };
+  User.findByUsername(username, resultCallback);
+};
+

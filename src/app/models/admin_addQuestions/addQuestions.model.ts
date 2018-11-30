@@ -3,6 +3,6 @@ export interface Question {
   selectionA: string,
   selectionB: string,
   selectionC: string,
-  selectionD: string
+  selectionD: string,
   answer: string;
 }

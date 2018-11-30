@@ -7,7 +7,7 @@ let express = require('express'),
 const app = express();
 
 
-mongoose.connect('mongodb://localhost:27017/BBQ').then(
+mongoose.connect('mongodb://localhost:27017/BBQProject').then(
   () => {console.log('Database is connected') },
     err => { console.log('Can not connect to the database'+ err)}
     );

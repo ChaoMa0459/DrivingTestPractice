@@ -9,4 +9,6 @@ module.exports = function (app) {
     // .get(questionController.list)
     .post(questionController.post);
 
+  app.route('/answerQuestions/answer')
+    .get(questionController.list);
 };

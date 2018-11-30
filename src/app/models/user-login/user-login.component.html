@@ -1,0 +1,20 @@
+<mat-card>
+  <form (submit)="onAddUser(userForm)" #userForm="ngForm">
+    <mat-form-field>
+      <input matInput placeholder="Username" name="username" required ngModel #username="ngModel">
+      <mat-error *ngIf="username.invalid">Please enter username</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password" name="password" ngModel required #password="ngModel">
+      <mat-error *ngIf="password.invalid">Please enter password</mat-error>
+    </mat-form-field>
+    <mat-radio-group name="userType" ngModel #userType="ngModel" required>
+
+      <mat-radio-button value="user">user</mat-radio-button>
+      <mat-radio-button value="admin">admin</mat-radio-button>
+      <mat-error *ngIf="userType.invalid">Please select an userType</mat-error>
+    </mat-radio-group>
+    <button mat-raised-button color="primary" type="submit">login</button>
+  </form>
+
+</mat-card>

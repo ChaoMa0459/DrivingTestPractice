@@ -3,7 +3,7 @@
 
     <ul class="unstyled">
         <li *ngFor="let question of questions let quesId = index;">
-            <strong class="question">{{ question.questionText }}</strong>
+            <strong class="question">{{ question.title }}</strong>
             <ul class="unstyled" id="quest_quesId">
         <li *ngFor="let answer of question.answers; let ansId = index;">
                 <label class="isCorrect_{{answer.selected}}" for="quest_{{quesId}}_answer_{{ansId}}">

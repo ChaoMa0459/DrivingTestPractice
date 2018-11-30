@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription} from "rxjs";
+import { Question } from "../admin_addQuestions/addQuestions.model";
+import { QuestionListService } from './question-list.service';
 
 @Component({
   selector: 'app-question-list',
@@ -10,12 +13,24 @@ export class QuestionListComponent implements OnInit {
   questions: object;
   answers: object;
   correctCount: number;
-  
-  constructor() { }
+
+  constructor(public questionService: QuestionListService) {
+  }
+
+  private questionsSub: Subscription;
 
   ngOnInit() {
 
-      this.questions = require('src/app/questions.json');
+      this.questionService.getQuestionList().subscribe((data: object) => {
+
+        this.questions = data;
+        console.log('this.questions:', this.questions);
+        this.convertData(data);
+
+      });
+
+      // this.questions = require('src/app/questions.json');
+
       this.answers = {}; // bind with the selected answers
       this.correctCount = 0; // count the number of correct answers
   }
@@ -45,4 +60,32 @@ export class QuestionListComponent implements OnInit {
 
 };
 
+convertData(data: object): any {
+  var newData = {};
+  
 }
+
+}
+
+    // [
+    //   {
+    //     "questionText": "Why is the sky blue?", "answers": [
+    //       { "answerText": "blah blah 1", "correct": true },
+    //       { "answerText": "blah blah 2", "correct": false },
+    //       { "answerText": "blah blah 3", "correct": false }
+    //     ]
+    //   }
+    // ]
+
+    // [
+    //     {
+    //         "_id": "5c008e8a2560dcf578c36b10",
+    //         "title": "1 + 1 = ?",
+    //         "selectionA": "1",
+    //         "selectionB": "2",
+    //         "selectionC": "3",
+    //         "selectionD": "4",
+    //         "answer": "B",
+    //         "__v": 0
+    //     }
+    // ]

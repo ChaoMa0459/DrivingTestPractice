@@ -2,8 +2,11 @@
 module.exports = function (app) {
   //Initialize models
   let questionModel = require('./models/question');
+  let userModel = require('./models/user');
 
   //Initialize routes
   let questionRoutes = require('./routes/question-route');
   questionRoutes(app);
+  let userRoutes = require('./routes/user-route');
+  userRoutes(app);
 };

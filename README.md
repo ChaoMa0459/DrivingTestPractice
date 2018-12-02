@@ -11,9 +11,13 @@ $ mogod
 $ ng start
 $ node server.js
   
-You can access the app at http://localhost:4200/.
+You can access the app at http://localhost:4200/login.
 
 Urls:
+
+Registration: http://localhost:4200/registration
+
+Login: http://localhost:4200/login
 
 Add Questions: http://localhost:4200/addQuestions
 

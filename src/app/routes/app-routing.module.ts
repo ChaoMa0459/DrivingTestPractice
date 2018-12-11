@@ -7,6 +7,7 @@ import {UserLoginComponent} from '../models/user-login/user-login.component';
 import { UserRegistrationComponent } from '../models/user-registration/user-registration.component';
 import { GoogleMapsComponent } from '../models/google-maps/google-maps.component';
 
+
 const routes: Routes = [
   {
     path: 'addQuestions',

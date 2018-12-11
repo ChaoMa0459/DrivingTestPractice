@@ -11,9 +11,13 @@ $ mogod
 $ ng start
 $ node server.js
   
-You can access the app at http://localhost:4200/.
+You can access the app at http://localhost:4200/login.
 
-Urls:
+## Urls:
+
+Registration: http://localhost:4200/registration
+
+Login: http://localhost:4200/login
 
 Add Questions: http://localhost:4200/addQuestions
 
@@ -52,10 +56,13 @@ These are some of the ideas for your project. You can work on anything from this
 # User Story
    According to the above project design, there are two types of people to use this website: admin and users.
    
-   ## Login
+   ## Login 
    As a admin, she/he wants to login the website, so she/he can effectively view his work history and update website information.
    
    As a user, she/he wants to login the website, so she/he can review his own history record every time.
+   
+   ## Register
+   As a user, she/he wants to register the website, so she/he can have her/his user account, and then she/he can login the website,to view her/his historical test records and analysis, which can help her/him more effectively do the test.
    
    ## Test
    As a user, she/he wants to do the test, so she/he can better prepare better before the official exam.

@@ -1,0 +1,16 @@
+<p>
+  google-maps works!
+  AIzaSyBNSN1xEQXCl-ChvLSkZ5r17uTrmMQqadg
+</p>
+
+<agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
+
+  <agm-marker 
+  [latitude]="latitude" 
+  [longitude]="longitude"
+  *ngIf="locationChosen"></agm-marker>
+  
+</agm-map>
+
+<p> AAA {{ latitude }} <p>
+<p> BBB {{ longitude }} <p>

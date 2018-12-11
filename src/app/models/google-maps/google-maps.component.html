@@ -1,16 +1,20 @@
-<p>
-  google-maps works!
-  AIzaSyBNSN1xEQXCl-ChvLSkZ5r17uTrmMQqadg
-</p>
+<p>Driving School Map</p>
 
-<agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
+<div class="map">
+    <agm-map [zoom]="zoom" [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
 
-  <agm-marker 
-  [latitude]="latitude" 
-  [longitude]="longitude"
-  *ngIf="locationChosen"></agm-marker>
-  
-</agm-map>
-
-<p> AAA {{ latitude }} <p>
-<p> BBB {{ longitude }} <p>
+        <agm-marker [latitude]="latitude" [longitude]="longitude" *ngIf="locationChosen"></agm-marker>
+      
+        <agm-marker
+        class="school_marker"
+        *ngFor="let school of schools"
+        [latitude]="school.lat" 
+        [longitude]="school.lng"
+        [label]="school.name"
+        [opacity]="opacity"
+        (mouseOver)="onOverSchool()"
+        (mouseOut)="onOutSchool()">
+      </agm-marker>
+        
+      </agm-map>
+</div>

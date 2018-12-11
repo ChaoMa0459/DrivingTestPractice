@@ -1,3 +1,18 @@
 agm-map {
     height: 400px;
 }
+
+
+agm-marker {
+    opacity: 0.5;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+p {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    align-items: center;
+}

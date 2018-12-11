@@ -15,10 +15,7 @@ import { AddQuestionDisplayComponent } from './models/admin_addQuestions/add-que
 import { AdminAddQuestionsComponent } from './models/admin_addQuestions/admin-add-questions/admin-add-questions.component';
 import { UserLoginComponent } from './models/user-login/user-login.component';
 import { UserRegistrationComponent } from './models/user-registration/user-registration.component';
-<<<<<<< HEAD
 import { GoogleMapsComponent } from './models/google-maps/google-maps.component';
-=======
->>>>>>> 5284d945a0e611d12d219bccada413c3e8562139
 
 @NgModule({
   declarations: [
@@ -29,12 +26,8 @@ import { GoogleMapsComponent } from './models/google-maps/google-maps.component'
     AddQuestionDisplayComponent,
     AdminAddQuestionsComponent,
     UserLoginComponent,
-<<<<<<< HEAD
     UserRegistrationComponent,
     GoogleMapsComponent
-=======
-    UserRegistrationComponent
->>>>>>> 5284d945a0e611d12d219bccada413c3e8562139
   ],
   imports: [
     BrowserModule,

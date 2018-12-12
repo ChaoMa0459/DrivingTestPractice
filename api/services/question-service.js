@@ -38,7 +38,7 @@ exports.delete = function (questionId, callback) {
     throwError(err);
     callback();
   };
-  Question.deleteOne,({
+  Question.deleteOne({
     _id: questionId
   }, resultCallback);
 };

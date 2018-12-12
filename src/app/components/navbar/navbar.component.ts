@@ -1,23 +1,9 @@
- /* import { Component,OnInit} from '@angular/core';
-
-@Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
-})
-export class NavbarComponent{
-  opened = true;
-  events = [];
-  constructor(){}
-  oninit(){}
-}
-*/
-
  import { Component, Input } from '@angular/core';
  import {ChangeDetectorRef, OnDestroy, OnInit} from '@angular/core';
  import {MediaMatcher} from '@angular/cdk/layout';
  import { NavBarService } from '../navbar/navbar.service';
  import { Subscription } from 'rxjs';
+
 
 
 

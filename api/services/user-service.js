@@ -26,7 +26,7 @@ exports.search = function (params, callback) {
 };
 
 
-exports.update = function (question, callback) {
+exports.update = function (user, callback) {
   let resultCallback = function (err, user) {
     throwError(err);
     callback(user);

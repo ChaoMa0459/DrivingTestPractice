@@ -9,11 +9,13 @@ export class ModifyPasswordService {
 
 
 
-    uri = 'http://localhost:4000/modifyPassword'
+  uri = 'http://localhost:4000/login'
 
   constructor(private http: HttpClient) { }
 
-
+  getUser(username){
+    return this.http.get(`${this.uri}/${username}`);
+  }
 
   updateUser(user, userId){
     this.http

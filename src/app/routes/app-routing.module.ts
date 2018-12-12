@@ -25,11 +25,11 @@ const routes: Routes = [
 
   },
   {
-    path: 'answerQuestions',
+    path: 'answerQuestions/:username',
     component: QuestionListComponent
   },
   {
-    path: 'login',
+    path: '',
     component: UserLoginComponent
   },
   {
@@ -46,18 +46,18 @@ const routes: Routes = [
     component:  AdminQuestionsListComponent
   },
   {
-    path: 'history',
+    path: 'history/:username',
     component:  HistoryTableComponent
 
   },
   {
 
-    path: 'modify',
+    path: 'modify/:username',
     component: ModifyPasswordComponent
   },
   {
 
-    path: 'chart',
+    path: 'chart/:username',
     component: ChartComponent
 
   }

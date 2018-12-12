@@ -5,6 +5,7 @@ import { User } from './user.model';
 import { Subscription} from "rxjs";
 import { UserLoginService } from './user-login.service';
 import { NavBarService } from '../navbar/navbar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login',
@@ -13,7 +14,7 @@ import { NavBarService } from '../navbar/navbar.service';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(public userLoginService: UserLoginService, public navBarService: NavBarService) { }
+  constructor(public userLoginService: UserLoginService, public navBarService: NavBarService, private router: Router) { }
 
   user: object;
 
@@ -48,10 +49,19 @@ export class UserLoginComponent implements OnInit {
       this.user = data;
       console.log('this.questions:', this.user);
 
-      if (Object.keys(data).length != 0 && this.password === data[0].password) {
-        this.login = true;
-        alert('Login Success!');
-      }else{
+      if(form.value.userType === 'user' && form.value.username !== 'admin') {
+
+
+        if (Object.keys(data).length != 0 && this.password === data[0].password) {
+          this.login = true;
+          alert('Login Success!');
+          this.router.navigate(['/answerQuestions', this.username]);
+        } else {
+          alert('Wrong username or password.')
+        }
+      }else if(form.value.username === 'admin' && form.value.password === 'admin' && form.value.userType === 'admin'){
+        this.router.navigate(['/adminQuestionsList']);
+      }else {
         alert('Wrong username or password.')
       }
 

@@ -4,6 +4,8 @@ import { QuestionList } from "./question-list.model";
 import { QuestionListService } from './question-list.service';
 import { Result } from '../history-table/history-table.model';
 import { ResultListService } from '../history-table/history-table.service';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-question-list',
@@ -18,14 +20,24 @@ export class QuestionListComponent implements OnInit {
   correctCount: number;
   wrongCount: number;
   submitted = false;
-  username = 'kai';
+  // username = 'kai';
 
-  constructor(public questionService: QuestionListService, public resultService: ResultListService) {
+  username: string;
+  constructor(public questionService: QuestionListService, public resultService: ResultListService, private route: ActivatedRoute, private router: Router) {
   }
 
   private questionsSub: Subscription;
 
   ngOnInit() {
+    this.route.params.subscribe((params) => this.username = params.username);
+
+    if(this.username === "undefined"){
+      alert("please login first");
+
+      this.router.navigateByUrl('/');
+
+
+    }
 
     this.questionService.getQuestionList().subscribe((data: object) => {
 

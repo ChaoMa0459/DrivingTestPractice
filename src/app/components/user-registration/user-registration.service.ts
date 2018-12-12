@@ -25,4 +25,7 @@ export class UserRegistrationService {
     this.http.post(`${this.uri}/add`, user)
       .subscribe(res => console.log('Done'));
   }
+  getUser(username){
+    return this.http.get("http://localhost:4000/login/"+username);
+  }
 }

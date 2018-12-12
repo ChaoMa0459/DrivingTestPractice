@@ -9,8 +9,9 @@
       <mat-error *ngIf="password.invalid">Please enter password</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="RePassword" name="rePassword" ngModel required #password="ngModel">
+      <input matInput placeholder="RePassword" name="rePassword" ngModel required #rePassword="ngModel">
       <mat-error *ngIf="rePassword.invalid">Please enter password</mat-error>
+      <!--<mat-error *ngIf="rePassword.value !== password.value">please repeat password</mat-error>-->
     </mat-form-field>
     <mat-form-field>
       <input matInput placeholder="EmailID" name="emailID" ngModel required #emailID="ngModel">

@@ -20,7 +20,7 @@ export class HistoryTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.resultService.getResultList().subscribe((data: object) => {
+    this.resultService.getResultList("kai").subscribe((data: object) => {
 
       this.data = data;
       console.log('this.data:', this.data);

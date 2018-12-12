@@ -11,4 +11,8 @@ module.exports = function (app) {
   app.route('/history/list')
     .get(resultController.list);
 
+  app.route('/history/:username')
+    .get(resultController.get);
+
+
 };

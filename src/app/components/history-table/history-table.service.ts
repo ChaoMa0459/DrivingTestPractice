@@ -13,7 +13,7 @@ export class ResultListService {
 //     return this.http.post(`${this.uri}/add`);
 //   }
 
-  getResultList(){
-    return this.http.get(`${this.uri}/list`);
+  getResultList(username){
+    return this.http.get(`${this.uri}/${username}`);
   }
 }

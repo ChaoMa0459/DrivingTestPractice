@@ -1,6 +1,8 @@
-<p>Driving School Map</p>
 
 <div class="map">
+    
+    <p>Driving School Map</p>
+
     <agm-map [zoom]="zoom" [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
 
         <agm-marker [latitude]="latitude" [longitude]="longitude" *ngIf="locationChosen"></agm-marker>

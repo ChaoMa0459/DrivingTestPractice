@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatRadioModule, MatTooltipModule, MatDialogModule, MatTableModule } from "@angular/material";
+
+import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatRadioModule,MatTooltipModule,MatDialogModule,MatSidenavModule,MatIconModule,MatListModule, MatTableModule } from "@angular/material";
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
+
 
 import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,7 @@ import { AddQuestionDisplayComponent } from './components/admin_addQuestions/add
 import { AdminAddQuestionsComponent } from './components/admin_addQuestions/admin-add-questions/admin-add-questions.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
 
@@ -27,11 +30,11 @@ import { HistoryTableComponent } from './components/history-table/history-table.
     AppComponent,
     QuestionListComponent,
     AddQuestionsComponent,
-    HeaderComponent,
     AddQuestionDisplayComponent,
     AdminAddQuestionsComponent,
     UserLoginComponent,
     UserRegistrationComponent,
+    NavbarComponent,
     GoogleMapsComponent,
     AdminQuestionsListComponent,
     HistoryTableComponent
@@ -52,10 +55,12 @@ import { HistoryTableComponent } from './components/history-table/history-table.
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBNSN1xEQXCl-ChvLSkZ5r17uTrmMQqadg'
     }),
-
     MatTooltipModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
 
   ],
   providers: [],

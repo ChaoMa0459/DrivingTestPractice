@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatRadioModule,MatTooltipModule,MatDialogModule,MatSidenavModule,MatIconModule,MatListModule } from "@angular/material";
+import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule,
+  MatExpansionModule, MatRadioModule,MatTooltipModule,MatDialogModule,MatSidenavModule,MatIconModule,MatListModule } from "@angular/material";
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 
@@ -21,6 +22,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
 
 import { AdminQuestionsListComponent } from './components/admin-questions-list/admin-questions-list.component';
+import { ModifyPasswordComponent } from './components/modify-password/modify-password.component';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { AdminQuestionsListComponent } from './components/admin-questions-list/a
     UserRegistrationComponent,
     NavbarComponent,
     GoogleMapsComponent,
-    AdminQuestionsListComponent
+    AdminQuestionsListComponent,
+    ModifyPasswordComponent
 
   ],
   imports: [

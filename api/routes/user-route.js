@@ -12,4 +12,7 @@ module.exports = function (app) {
   app.route('/login/:username')
     .get(userController.get);
 
+    app.route('/modifyPassword/:userId')
+    .put(userController.put)
+
 };

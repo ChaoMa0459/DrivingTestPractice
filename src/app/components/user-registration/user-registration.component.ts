@@ -13,12 +13,12 @@ import { UserRegistrationService } from './user-registration.service';
 export class UserRegistrationComponent implements OnInit {
 
   constructor(public userRegistrationService: UserRegistrationService) { }
-  
+
   user: object;
 
   ngOnInit() {
   }
-  
+
   username = '';
   password = '';
   rePassword = '';
@@ -38,6 +38,6 @@ export class UserRegistrationComponent implements OnInit {
     console.log(user);
 
     this.userRegistrationService.addUser(user);
-    alert('success!')
+    alert('success!');
   }
 }

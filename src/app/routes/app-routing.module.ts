@@ -12,6 +12,8 @@ import { GoogleMapsComponent } from '../components/google-maps/google-maps.compo
 import {AdminQuestionsListComponent} from "../components/admin-questions-list/admin-questions-list.component";
 import { HistoryTableComponent } from "../components/history-table/history-table.component";
 
+import {ModifyPasswordComponent} from "../components/modify-password/modify-password.component";
+
 
 const routes: Routes = [
   {
@@ -43,7 +45,13 @@ const routes: Routes = [
   {
     path: 'history',
     component:  HistoryTableComponent
+
+  },
+  {
+    path: 'modify',
+    component:  ModifyPasswordComponent
   }
+
 ];
 
 @NgModule({

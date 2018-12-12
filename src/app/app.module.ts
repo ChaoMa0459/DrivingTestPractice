@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatRadioModule } from "@angular/material";
+import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatRadioModule,MatTooltipModule,MatDialogModule } from "@angular/material";
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 
@@ -15,7 +15,11 @@ import { AddQuestionDisplayComponent } from './models/admin_addQuestions/add-que
 import { AdminAddQuestionsComponent } from './models/admin_addQuestions/admin-add-questions/admin-add-questions.component';
 import { UserLoginComponent } from './models/user-login/user-login.component';
 import { UserRegistrationComponent } from './models/user-registration/user-registration.component';
+
 import { GoogleMapsComponent } from './models/google-maps/google-maps.component';
+
+import { AdminQuestionsListComponent } from './admin-questions-list/admin-questions-list.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { GoogleMapsComponent } from './models/google-maps/google-maps.component'
     AdminAddQuestionsComponent,
     UserLoginComponent,
     UserRegistrationComponent,
-    GoogleMapsComponent
+    GoogleMapsComponent,
+    AdminQuestionsListComponent
+
   ],
   imports: [
     BrowserModule,
@@ -44,6 +50,9 @@ import { GoogleMapsComponent } from './models/google-maps/google-maps.component'
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBNSN1xEQXCl-ChvLSkZ5r17uTrmMQqadg'
     }),
+
+    MatTooltipModule,
+    MatDialogModule
 
   ],
   providers: [],

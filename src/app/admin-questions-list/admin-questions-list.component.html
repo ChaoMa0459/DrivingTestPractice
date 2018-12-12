@@ -1,0 +1,62 @@
+<mat-accordion multi="true" *ngIf="data !== null">
+  <mat-expansion-panel *ngFor="let question of data; let qid=index">
+    <mat-expansion-panel-header>
+     Question {{ qid+1}}:
+    </mat-expansion-panel-header>
+
+
+        <mat-form-field>
+          <!--<textarea matInput rows="6" [(ngModel)]="questionTitle"></textarea>-->
+          <textarea matInput placeholder="Question Title" name="questionTitle" ngModel = {{question.title}} required #questionTitle="ngModel" >
+          </textarea>
+          <mat-error *ngIf="questionTitle.invalid">Please enter a question title</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Selection A" name="selectionA" required ngModel = {{question.selectionA}} #selectionA="ngModel" >
+          <mat-error *ngIf="selectionA.invalid">Please enter selection A</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Selection B" name="selectionB" required ngModel = {{question.selectionB}} #selectionB="ngModel">
+          <mat-error *ngIf="selectionB.invalid">Please enter selection B</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Selection C" name="selectionC" required ngModel="{{question.selectionC}}" #selectionC="ngModel">
+          <mat-error *ngIf="selectionC.invalid">Please enter selection C</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Selection D" name="selectionD" ngModel="{{question.selectionD}}" #selectionD="ngModel">
+        </mat-form-field>
+
+
+
+
+    <p>Current Answer:</p>
+    <button mat-raised-button
+            matTooltip="Choose If New Answer"
+            matTooltipPosition="after"
+            aria-label="Button that displays a tooltip when focused or hovered over"
+
+            (click)="ondisplay(answer)" >{{question.answer}}</button><br/>
+
+    <mat-radio-group name="answer"  ngModel={{question.answer}} #answer="ngModel">
+
+      <mat-radio-button value="A">A</mat-radio-button>
+      <mat-radio-button value="B">B</mat-radio-button>
+      <mat-radio-button value="C">C</mat-radio-button>
+      <mat-radio-button value="D">D</mat-radio-button>
+
+
+    </mat-radio-group>
+
+    <br/>
+        <button mat-raised-button color="primary"
+                (click)="onUpdate(question._id, questionTitle.value, selectionA.value, selectionB.value, selectionC.value, selectionD.value, answer.value)">
+          Update Question</button>
+        <button mat-raised-button color="primary"  (click)="onDelete(question._id)">Delete Question</button>
+
+
+
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text" *ngIf="data === null">No question add yet!</p>

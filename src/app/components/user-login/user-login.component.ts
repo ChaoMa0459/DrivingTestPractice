@@ -4,6 +4,7 @@ import { User } from './user.model';
 
 import { Subscription} from "rxjs";
 import { UserLoginService } from './user-login.service';
+import { NavBarService } from '../navbar/navbar.service';
 
 @Component({
   selector: 'app-user-login',
@@ -12,7 +13,7 @@ import { UserLoginService } from './user-login.service';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(public userLoginService: UserLoginService) { }
+  constructor(public userLoginService: UserLoginService, public navBarService: NavBarService) { }
 
   user: object;
 
@@ -31,6 +32,9 @@ export class UserLoginComponent implements OnInit {
     }
     this.username = form.value.username;
     this.password = form.value.password;
+
+    this.navBarService.sendMessage(this.username);
+
     // const user: User = {
 
     //   username: form.value.username,
@@ -52,7 +56,6 @@ export class UserLoginComponent implements OnInit {
       }
 
     });
-
   }
 
 }

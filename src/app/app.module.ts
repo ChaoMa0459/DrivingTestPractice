@@ -7,8 +7,6 @@ import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule,
   MatSidenavModule, MatIconModule, MatListModule, MatTableModule,MatMenuModule } from "@angular/material";
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
-
-
 import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
 import { QuestionListComponent } from './components/question-list/question-list.component';
@@ -28,6 +26,12 @@ import { HistoryTableComponent } from './components/history-table/history-table.
 import { ModifyPasswordComponent } from './components/modify-password/modify-password.component';
 
 
+import { ChartComponent } from './components/chart/chart.component';
+
+
+import {NgxEchartsModule} from 'ngx-echarts'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,8 +44,13 @@ import { ModifyPasswordComponent } from './components/modify-password/modify-pas
     NavbarComponent,
     GoogleMapsComponent,
     AdminQuestionsListComponent,
+
     HistoryTableComponent,
-    ModifyPasswordComponent
+    ModifyPasswordComponent,
+
+
+    ChartComponent
+
 
   ],
   imports: [
@@ -59,13 +68,19 @@ import { ModifyPasswordComponent } from './components/modify-password/modify-pas
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBNSN1xEQXCl-ChvLSkZ5r17uTrmMQqadg'
     }),
+
     MatTooltipModule,
     MatDialogModule,
     MatTableModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatTooltipModule,
+    MatDialogModule,
+    NgxEchartsModule,
+
     MatMenuModule
+
 
   ],
   providers: [],

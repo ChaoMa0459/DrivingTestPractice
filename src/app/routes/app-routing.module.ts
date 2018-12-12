@@ -14,6 +14,9 @@ import { HistoryTableComponent } from "../components/history-table/history-table
 
 import {ModifyPasswordComponent} from "../components/modify-password/modify-password.component";
 
+import {ChartComponent} from "../components/chart/chart.component";
+
+
 
 const routes: Routes = [
   {
@@ -48,8 +51,15 @@ const routes: Routes = [
 
   },
   {
+
     path: 'modify',
-    component:  ModifyPasswordComponent
+    component: ModifyPasswordComponent
+  },
+  {
+
+    path: 'chart',
+    component: ChartComponent
+
   }
 
 ];

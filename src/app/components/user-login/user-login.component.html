@@ -15,6 +15,8 @@
       <mat-error *ngIf="userType.invalid">Please select an userType</mat-error>
     </mat-radio-group>
     <button mat-raised-button color="primary" type="submit">login</button>
+    <button mat-raised-button *ngIf="login" class="go" 
+    routerLink="/answerQuestions" color="primary">Go</button>
   </form>
 
 </mat-card>

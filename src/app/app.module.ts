@@ -28,7 +28,7 @@ import { GoogleMapsComponent } from './models/google-maps/google-maps.component'
     UserLoginComponent,
     UserRegistrationComponent,
     GoogleMapsComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

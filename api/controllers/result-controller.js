@@ -1,12 +1,12 @@
 'use strict';
-const questionService = require('../services/result-service');
+const resultService = require('../services/result-service');
 
 exports.list = function (request, response) {
   let callback = function (result) {
     response.status(200);
     response.json(result);
   };
-  questionService.search({}, callback);
+  resultService.search({}, callback);
 };
 
 exports.post = function (request, response) {
@@ -15,5 +15,5 @@ exports.post = function (request, response) {
       response.status(200);
       response.json(result);
     };
-  questionService.save(newResult, callback);
+    resultService.save(newResult, callback);
 };

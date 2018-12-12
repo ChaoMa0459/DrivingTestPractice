@@ -7,12 +7,16 @@ let result = new Schema({
     required: "username is required"
   },
   rightNum: {
-    type: String,
-    required: "selection A is required"
+    type: Number,
+    required: "rightNum is required"
+  },
+  totalNum: {
+    type: Number,
+    required: "totalNum is required"
   }
 },
 {
-  collection: 'questions'
+  collection: 'results'
 });
 
 module.exports = mongoose.model('result', result);

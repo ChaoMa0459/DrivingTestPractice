@@ -3,26 +3,34 @@ final-project-bbq created by GitHub Classroom
 
 # How to Run:
 Clone this repo into local directory.
-Open terminal and run these commands:
+
+Install MongoDB.
+
+Create 3 collctions of "users", "questions" and "results" in MongoDB.
+
+Open three terminals and run these commands:
+
+First terminal:
 $ cd <local project directory>
 $ npm install
 $ export PATH=<local mongodb directory>/bin:$PATH
 $ mogod
-$ ng start
+ 
+Second terminal:
 $ node server.js
-  
-You can access the app at http://localhost:4200/login.
 
-## Urls:
+Third terminal:
+$ ng start
 
-Registration: http://localhost:4200/registration
+Now you can access the app at http://localhost:4200/login.
 
-Login: http://localhost:4200/login
+## Code Structure:
 
-Add Questions: http://localhost:4200/addQuestions
+Components: /src/app/components
 
-Answer Questions: http://localhost:4200/answerQuestions
+APIs: /api
 
+Resources: /src/assets
 
 ## Assignment 7:
 Create below deliverables for your final project

@@ -1,35 +1,35 @@
 <div class="example-container">
-<mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <h1 class="example-app-name">BBQ Project</h1>
-    <button id="btn_user" mat-button [matMenuTriggerFor]="menu">User</button>
-                <mat-menu #menu="matMenu">
-                  <button mat-menu-item routerLink="/login" routerLinkActive="active">Login</button>
-                  <button mat-menu-item routerLink="/registration" routerLinkActive="active">SignUp</button>
-                  <button mat-menu-item routerLink="/modify" routerLinkActive="active">ModifyPassword</button>
-                </mat-menu>
-</mat-toolbar>
+    <mat-toolbar color="primary" class="example-toolbar">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="example-app-name">BBQ Project</h1>
+        <button id="btn_user" mat-button [matMenuTriggerFor]="menu">User</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item class="topBtn" routerLink="/login" routerLinkActive="active"><strong>Login</strong></button>
+            <button mat-menu-item class="topBtn" routerLink="/registration" routerLinkActive="active"><strong>Sign Up</strong></button>
+            <button mat-menu-item class="topBtn" routerLink="/modify" routerLinkActive="active"><strong>Reset Password</strong></button>
+        </mat-menu>
+    </mat-toolbar>
 
-<mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-        fixedTopGap="56">
-        <mat-nav-list>
-            <button mat-menu-item routerLink="/answerQuestions" routerLinkActive="active">Practice</button>
-        </mat-nav-list>
-        <mat-nav-list>
-            <button mat-menu-item routerLink="/maps" routerLinkActive="active">Map</button>
-        </mat-nav-list>
-        <mat-nav-list>
-                <button mat-menu-item routerLink="/history" routerLinkActive="active">Test History</button>
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav id="sidenav" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56">
+            <mat-nav-list>
+                <button class="sideBtn" mat-menu-item routerLink="/answerQuestions" routerLinkActive="active"><strong>Practice</strong></button>
             </mat-nav-list>
-    </mat-sidenav>
+            <mat-nav-list>
+                <button class="sideBtn" mat-menu-item routerLink="/maps" routerLinkActive="active"><strong>Map</strong></button>
+            </mat-nav-list>
+            <mat-nav-list>
+                <button class="sideBtn" mat-menu-item routerLink="/history" routerLinkActive="active"><strong>Test History</strong></button>
+            </mat-nav-list>
+        </mat-sidenav>
 
-    <mat-sidenav-content>
-        <p *ngFor="let content of fillerContent">{{content}}</p>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+        <mat-sidenav-content>
+            <p *ngFor="let content of fillerContent">{{content}}</p>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 </div>
 
 

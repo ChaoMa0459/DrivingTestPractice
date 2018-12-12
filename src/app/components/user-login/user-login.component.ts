@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from './user.model';
 
@@ -23,7 +23,7 @@ export class UserLoginComponent implements OnInit {
 
   username = '';
   password = '';
-
+  login = false;
 
   onAddUser(form: NgForm){
     if(form.invalid){
@@ -44,10 +44,11 @@ export class UserLoginComponent implements OnInit {
       this.user = data;
       console.log('this.questions:', this.user);
 
-      if (this.password === data[0].password) {
+      if (Object.keys(data).length != 0 && this.password === data[0].password) {
+        this.login = true;
         alert('Login Success!');
       }else{
-        alert('failed, please check.')
+        alert('Wrong username or password.')
       }
 
     });

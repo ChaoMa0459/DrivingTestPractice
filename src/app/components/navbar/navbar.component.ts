@@ -13,8 +13,8 @@ export class NavbarComponent{
 }
 */
 
- import { Component} from '@angular/core';
- import {ChangeDetectorRef, OnDestroy} from '@angular/core';
+ import { Component, Input } from '@angular/core';
+ import {ChangeDetectorRef, OnDestroy, OnInit} from '@angular/core';
  import {MediaMatcher} from '@angular/cdk/layout';
 
 
@@ -23,14 +23,11 @@ export class NavbarComponent{
    templateUrl: './navbar.component.html',
    styleUrls: ['./navbar.component.scss']
  })
- export class NavbarComponent implements OnDestroy{
+ export class NavbarComponent implements OnDestroy, OnInit {
+
   mobileQuery: MediaQueryList;
-
-  
-
-
-
   private _mobileQueryListener: () => void;
+  @Input() username: string;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
@@ -38,6 +35,10 @@ export class NavbarComponent{
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
+  ngOnInit() {
+    console.log("navbar username ", this.username);
+  }
+  
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }

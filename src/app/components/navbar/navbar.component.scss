@@ -1,0 +1,54 @@
+/*mat-sidenav{
+    padding:16px;
+}
+
+mat-sidenav-container{
+    float: left;
+    height:100%;
+    width: 20%;
+    background:rgba(0,0,0,0);
+
+}    
+
+.open_btn {
+    display: block;
+    margin-left: 30%;
+    padding:100px;
+}
+
+  */
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    z-index: 2;
+  }
+  
+  h1.example-app-name {
+    margin-left: 8px;
+  }
+  
+  .example-sidenav-container {
+    flex: 5;
+    float: left;
+    height:100%;
+    width: 20%;
+    background:rgba(0,0,0,0);
+  }
+  
+  .example-is-mobile .example-sidenav-container {
+    flex: 5 0 auto;
+  }
+
+ .mat-drawer-content{
+   color:"primary";
+ }
+  

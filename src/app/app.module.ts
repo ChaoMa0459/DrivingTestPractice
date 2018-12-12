@@ -29,7 +29,9 @@ import { ModifyPasswordComponent } from './components/modify-password/modify-pas
 import { ChartComponent } from './components/chart/chart.component';
 
 
-import {NgxEchartsModule} from 'ngx-echarts'
+import {NgxEchartsModule} from 'ngx-echarts';
+import { NavBarService } from './components/navbar/navbar.service';
+
 
 
 @NgModule({
@@ -83,7 +85,9 @@ import {NgxEchartsModule} from 'ngx-echarts'
 
 
   ],
-  providers: [],
+  providers: [
+    NavBarService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

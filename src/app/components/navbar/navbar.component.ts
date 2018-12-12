@@ -16,6 +16,9 @@ export class NavbarComponent{
  import { Component, Input } from '@angular/core';
  import {ChangeDetectorRef, OnDestroy, OnInit} from '@angular/core';
  import {MediaMatcher} from '@angular/cdk/layout';
+ import { NavBarService } from '../navbar/navbar.service';
+ import { Subscription } from 'rxjs';
+
 
 
  @Component({
@@ -27,16 +30,20 @@ export class NavbarComponent{
 
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
-  @Input() username: string;
+  username: string;
+  subscription: Subscription;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public navBarService: NavBarService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+
+    this.subscription = this.navBarService.getMessage()
+    .subscribe(message => { this.username = message; console.log("navbar username ", this.username);});
   }
 
   ngOnInit() {
-    console.log("navbar username ", this.username);
+      console.log("navbar username ", this.username);
   }
   
   ngOnDestroy(): void {

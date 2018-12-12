@@ -1,0 +1,42 @@
+<div class="question_list">
+    <div class="title">
+        <strong>Questions:</strong>
+    </div>
+
+    <mat-accordion multi="true" *ngIf="questions.length > 0">
+        <mat-expansion-panel class="panel" *ngFor="let question of questions let quesId = index;" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <strong class="question_title"> Question {{ quesId + 1 }} </strong>
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{ question.title }}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <ul class="unstyled" id="quest_quesId">
+                <li *ngFor="let answer of question.answers; let ansId = index;">
+
+                    <input type="radio" id="quest_{{quesId}}_answer_{{ansId}}" [(ngModel)]="answers[quesId]" value="{{ answer.answerText }}"
+                        name="quest_{{quesId}}_answers" />
+                    <label id="isCorrect_{{answer.selected}}" for="quest_{{quesId}}_answer_{{ansId}}">
+                        {{ answer.answerText }}
+                    </label>
+
+                </li>
+            </ul>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+    <div class="btn">
+         <button class="btn btn-sm animated-button thar" type="submit" (click)="showResult()"> <strong>SUBMIT</strong> </button> 
+        </div>
+
+    <div *ngIf="submitted" class="well">
+        <strong class="result">Congratulations! You got {{ correctCount }}/{{questions.length}} right!</strong>
+    </div>
+
+    <p *ngIf="questions.length <= 0" class="info-text mat-body-1">No questions now.</p>
+</div>

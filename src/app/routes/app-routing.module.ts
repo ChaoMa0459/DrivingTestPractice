@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AdminAddQuestionsComponent } from '../models/admin_addQuestions/admin-add-questions/admin-add-questions.component';
-import { QuestionListComponent } from '../models/question-list/question-list.component';
-import {UserLoginComponent} from '../models/user-login/user-login.component';
-import { UserRegistrationComponent } from '../models/user-registration/user-registration.component';
+import { AdminAddQuestionsComponent } from '../components/admin_addQuestions/admin-add-questions/admin-add-questions.component';
+import { QuestionListComponent } from '../components/question-list/question-list.component';
+import {UserLoginComponent} from '../components/user-login/user-login.component';
+import { UserRegistrationComponent } from '../components/user-registration/user-registration.component';
+
+import { GoogleMapsComponent } from '../components/google-maps/google-maps.component';
+
+
+import {AdminQuestionsListComponent} from "../components/admin-questions-list/admin-questions-list.component";
+
 
 const routes: Routes = [
   {
@@ -23,6 +29,16 @@ const routes: Routes = [
   {
     path: 'registration',
     component: UserRegistrationComponent
+  },
+  {
+
+    path: 'maps',
+    component: GoogleMapsComponent
+  },
+  {
+    path: 'adminQuestionsList',
+    component:  AdminQuestionsListComponent
+
   }
 ];
 

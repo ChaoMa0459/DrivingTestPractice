@@ -14,6 +14,7 @@ export class QuestionListComponent implements OnInit {
   questions = [];
   answers: object;
   correctCount: number;
+  submitted = false;
 
   constructor(public questionService: QuestionListService) {
   }
@@ -55,6 +56,7 @@ export class QuestionListComponent implements OnInit {
         }
       }
     }
+    this.submitted = true;
     // console.log(this.correctCount);
     // console.log(Object.keys(this.questions).length);
     console.log(this.answers);
@@ -91,25 +93,3 @@ export class QuestionListComponent implements OnInit {
 
 }
 
-    // [
-    //   {
-    //     "questionText": "Why is the sky blue?", "answers": [
-    //       { "answerText": "blah blah 1", "correct": true },
-    //       { "answerText": "blah blah 2", "correct": false },
-    //       { "answerText": "blah blah 3", "correct": false }
-    //     ]
-    //   }
-    // ]
-
-    // [
-    //     {
-    //         "_id": "5c008e8a2560dcf578c36b10",
-    //         "title": "1 + 1 = ?",
-    //         "selectionA": "1",
-    //         "selectionB": "2",
-    //         "selectionC": "3",
-    //         "selectionD": "4",
-    //         "answer": "B",
-    //         "__v": 0
-    //     }
-    // ]

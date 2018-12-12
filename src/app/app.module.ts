@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatRadioModule,MatTooltipModule,MatDialogModule } from "@angular/material";
+import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatRadioModule, MatTooltipModule, MatDialogModule, MatTableModule } from "@angular/material";
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 
@@ -19,6 +19,7 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
 
 import { AdminQuestionsListComponent } from './components/admin-questions-list/admin-questions-list.component';
+import { HistoryTableComponent } from './components/history-table/history-table.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AdminQuestionsListComponent } from './components/admin-questions-list/a
     UserLoginComponent,
     UserRegistrationComponent,
     GoogleMapsComponent,
-    AdminQuestionsListComponent
+    AdminQuestionsListComponent,
+    HistoryTableComponent
 
   ],
   imports: [
@@ -52,7 +54,8 @@ import { AdminQuestionsListComponent } from './components/admin-questions-list/a
     }),
 
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
 
   ],
   providers: [],

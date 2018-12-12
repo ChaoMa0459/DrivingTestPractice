@@ -1,7 +1,4 @@
 <div class="question_list">
-    <div class="title">
-        <strong>Questions:</strong>
-    </div>
 
     <mat-accordion multi="true" *ngIf="questions.length > 0">
         <mat-expansion-panel class="panel" *ngFor="let question of questions let quesId = index;" (opened)="panelOpenState = true"

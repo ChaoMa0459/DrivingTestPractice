@@ -12,7 +12,7 @@ Open three terminals and run these commands:
 
 First terminal:
 
-$ cd <local project directory>
+$ cd into local project directory
   
 $ npm install
 

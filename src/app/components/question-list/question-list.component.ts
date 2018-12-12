@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from "rxjs";
 import { QuestionList } from "./question-list.model";
 import { QuestionListService } from './question-list.service';
+import { Result } from '../history-table/history-table.model';
+import { ResultListService } from '../history-table/history-table.service';
 
 @Component({
   selector: 'app-question-list',
@@ -14,9 +16,11 @@ export class QuestionListComponent implements OnInit {
   questions = [];
   answers: object;
   correctCount: number;
+  wrongCount: number;
   submitted = false;
+  username = 'kai';
 
-  constructor(public questionService: QuestionListService) {
+  constructor(public questionService: QuestionListService, public resultService: ResultListService) {
   }
 
   private questionsSub: Subscription;
@@ -39,6 +43,8 @@ export class QuestionListComponent implements OnInit {
 
   showResult(): void {
     this.correctCount = 0;
+    this.wrongCount = 0;
+
     var qLength = Object.keys(this.questions).length;
     for (var i = 0; i < qLength; i++) {
       var answers = this.questions[i].answers;
@@ -53,6 +59,7 @@ export class QuestionListComponent implements OnInit {
           this.correctCount++;
         } else if (this.questions[i].userAnswer === answers[j].answerText && answers[j].correct === false) {
           answers[j].selected = "false";
+          this.wrongCount++;
         }
       }
     }
@@ -61,7 +68,19 @@ export class QuestionListComponent implements OnInit {
     // console.log(Object.keys(this.questions).length);
     console.log(this.answers);
 
+    this.storeResult();
+
   };
+
+  storeResult() {
+    const result: Result = {
+      username: this.username,
+      rightNum: this.correctCount,
+      totalNum: this.correctCount + this.wrongCount,
+    };
+    console.log("result", result);
+    this.resultService.addResult(result);
+  }
 
   convertData(data: object): any {
 

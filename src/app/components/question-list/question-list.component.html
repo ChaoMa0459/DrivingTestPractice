@@ -31,12 +31,15 @@
         </mat-expansion-panel>
     </mat-accordion>
     <div class="btn">
-         <button class="btn btn-sm animated-button thar" type="submit" (click)="showResult()"> <strong>SUBMIT</strong> </button> 
-        </div>
-
-    <div *ngIf="submitted" class="well">
-        <strong class="result">Congratulations! You got {{ correctCount }}/{{questions.length}} right!</strong>
+        <button class="btn btn-sm animated-button thar" type="submit" (click)="showResult()"> <strong>SUBMIT</strong>
+        </button>
     </div>
 
-    <p *ngIf="questions.length <= 0" class="info-text mat-body-1">No questions now.</p>
+    <div *ngIf="submitted" class="well">
+        <strong class="result">Congratulations! You got {{ correctCount }}/{{ correctCount + wrongCount }} right!</strong>
+    </div>
+
+    <div *ngIf="questions.length <= 0" class="well">
+        <strong class="result">No questions now.</strong>
+    </div>
 </div>

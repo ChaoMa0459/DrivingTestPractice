@@ -1,30 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatRadioModule } from "@angular/material";
+import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatRadioModule,MatSidenavModule } from "@angular/material";
 import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './routes/app-routing.module';
 import { AppComponent } from './app.component';
 import { QuestionListComponent } from './models/question-list/question-list.component';
 import { AddQuestionsComponent } from './models/admin_addQuestions/add-questions/add-questions.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './models/header/header.component';
 import { AddQuestionDisplayComponent } from './models/admin_addQuestions/add-question-display/add-question-display.component';
 import { AdminAddQuestionsComponent } from './models/admin_addQuestions/admin-add-questions/admin-add-questions.component';
 import { UserLoginComponent } from './models/user-login/user-login.component';
 import { UserRegistrationComponent } from './models/user-registration/user-registration.component';
+import { NavbarComponent } from './models/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionListComponent,
     AddQuestionsComponent,
-    HeaderComponent,
     AddQuestionDisplayComponent,
     AdminAddQuestionsComponent,
     UserLoginComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +38,8 @@ import { UserRegistrationComponent } from './models/user-registration/user-regis
     MatToolbarModule,
     MatExpansionModule,
     MatRadioModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

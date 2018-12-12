@@ -45,14 +45,28 @@ export class AdminQuestionsListComponent implements OnInit {
     console.log(question);
     this.adminQuestionService.updateQuestion(question, questionId);
     alert("Update Successfully");
-    location.reload();
+    // location.reload();
+    this.adminQuestionService.getQuestionList().subscribe((data: object) => {
+
+      this.data = data;
+      console.log('this.data:', this.data);
+
+
+    });
   }
 
   onDelete(questionId) {
     this.adminQuestionService.deleteQuestion(questionId);
     // this.router.navigateByUrl("/adminQuestionsList");
     alert("Delete Successfully");
-    location.reload();
+    // location.reload();
+    this.adminQuestionService.getQuestionList().subscribe((data: object) => {
+
+      this.data = data;
+      console.log('this.data:', this.data);
+
+
+    });
   }
   ondisplay(answer){
     console.log(answer);

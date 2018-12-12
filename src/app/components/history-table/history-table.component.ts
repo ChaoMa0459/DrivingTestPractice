@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Result } from './history-table.model';
 import { ResultListService } from './history-table.service';
 import { Subscription } from "rxjs";
-
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-history-table',
@@ -14,13 +15,21 @@ export class HistoryTableComponent implements OnInit {
   data: object;
   displayedColumns: string[] = ['position', 'rightNum', 'totalNum', 'percentage'];
   dataSource = [];
-  username = 'kai';
+  // username = 'kai';
+  username:string;
 
-  constructor(public resultService: ResultListService) {
+  constructor(public resultService: ResultListService, private route: ActivatedRoute, private router: Router) {
 
   }
 
   ngOnInit() {
+    this.route.params.subscribe((params) => this.username = params.username);
+
+    if(this.username === "undefined"){
+      alert("please login first");
+      this.router.navigateByUrl('/');
+    }
+
     this.resultService.getResultList(this.username).subscribe((data: object) => {
 
       this.data = data;

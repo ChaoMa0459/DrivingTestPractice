@@ -3,6 +3,8 @@ import { ChartService } from './chart.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 // import { EChartOption } from 'echarts';
 // import { gexf } from 'echarts/extension/dataTool';
 
@@ -17,8 +19,9 @@ export class ChartComponent implements OnInit {
   displayedColumns: string[] = ['position', 'rightNum', 'totalNum', 'percentage'];
   // position = [];
   // percentage = [];
-  username = 'kai';
+  // username = 'kai';
 
+  username:string;
   options = {};
 
 
@@ -27,9 +30,15 @@ export class ChartComponent implements OnInit {
   //
   // graphOption: Observable<EChartOption>;
 
-  constructor(public chartService: ChartService) { }
+  constructor(public chartService: ChartService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.route.params.subscribe((params) => this.username = params.username);
+    if(this.username === "undefined"){
+      alert("please login first");
+      this.router.navigateByUrl('/');
+    }
+
     let position = new Array();
     let percentage = [];
 
@@ -49,12 +58,16 @@ export class ChartComponent implements OnInit {
 
 
       this.options = {
+        title : {
+          text: 'Test Score Line Chart',
+          subtext: 'Correct rate'
+        },
         backgroundColor: '#FBFBFB',
         tooltip : {
           trigger: 'axis'
         },
         legend: {
-          data:['percentage']
+          data:['correct rate']
         },
 
         calculable : true,
@@ -90,7 +103,7 @@ export class ChartComponent implements OnInit {
         ],
         series : [
           {
-            name:'percentage',
+            name:'correct rate',
             type:'line',
             symbol:'none',
             smooth: 0.2,

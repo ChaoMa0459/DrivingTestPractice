@@ -36,7 +36,7 @@ exports.get = function (request, response) {
 
 exports.put = function (request, response) {
   let user = Object.assign({}, request.body),
-    callback = function (question) {
+    callback = function (user) {
       response.status(200);
       response.json(user);
     };

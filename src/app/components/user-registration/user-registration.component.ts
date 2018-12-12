@@ -17,6 +17,7 @@ export class UserRegistrationComponent implements OnInit {
   user: object;
 
   ngOnInit() {
+
   }
 
   username = '';
@@ -28,16 +29,35 @@ export class UserRegistrationComponent implements OnInit {
     if(form.invalid){
       return;
     }
-    this.username = form.value.username;
-    const user: User = {
+    if(form.value.password !== form.value.rePassword){
+      alert('please check input');
+    }
+    this.userRegistrationService.getUser(form.value.username).subscribe((data: object) => {
 
-      username: form.value.username,
-      password: form.value.password,
-      // emailID: form.value.emailID,
-    };
-    console.log(user);
+      this.user = data;
+      // if(this.user === null)
+      console.log(data);
+      console.log(Object.keys(data).length === 0);
 
-    this.userRegistrationService.addUser(user);
-    alert('success!');
+      if(Object.keys(data).length === 0){
+        this.username = form.value.username;
+        const user: User = {
+
+          username: form.value.username,
+          password: form.value.password,
+          // emailID: form.value.emailID,
+        };
+        console.log(user);
+
+        this.userRegistrationService.addUser(user);
+        alert('success!');
+      }else{
+        alert('username is exist');
+      }
+
+
+    });
+
+
   }
 }

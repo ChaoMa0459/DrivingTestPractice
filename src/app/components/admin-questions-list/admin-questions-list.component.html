@@ -1,3 +1,4 @@
+<div class="question_list">
 <mat-accordion multi="true" *ngIf="data !== null">
   <mat-expansion-panel *ngFor="let question of data; let qid=index">
     <mat-expansion-panel-header>
@@ -60,3 +61,4 @@
   </mat-expansion-panel>
 </mat-accordion>
 <p class="info-text" *ngIf="data === null">No question add yet!</p>
+</div>

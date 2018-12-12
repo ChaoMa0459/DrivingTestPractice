@@ -80,8 +80,8 @@ import { NavBarService } from './components/navbar/navbar.service';
     MatTooltipModule,
     MatDialogModule,
     NgxEchartsModule,
-
     MatMenuModule
+
 
 
   ],

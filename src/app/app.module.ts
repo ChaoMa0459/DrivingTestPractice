@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, 
   MatExpansionModule, MatRadioModule, MatTooltipModule, MatDialogModule,
-  MatSidenavModule, MatIconModule, MatListModule, MatTableModule } from "@angular/material";
+  MatSidenavModule, MatIconModule, MatListModule, MatTableModule,MatMenuModule } from "@angular/material";
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule } from './routes/app-routing.module';
@@ -75,10 +75,11 @@ import {NgxEchartsModule} from 'ngx-echarts'
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-
     MatTooltipModule,
     MatDialogModule,
-    NgxEchartsModule
+    NgxEchartsModule,
+
+    MatMenuModule
 
 
   ],

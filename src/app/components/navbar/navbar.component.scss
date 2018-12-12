@@ -26,6 +26,10 @@ mat-sidenav-container{
     left: 0;
     right: 0;
   }
+
+  #sidenav {
+    background-image: url('src/assets/stations_boston.jpg');
+  }
   
   .example-is-mobile .example-toolbar {
     position: fixed;
@@ -52,3 +56,12 @@ mat-sidenav-container{
    color:"primary";
  }
   
+ #btn_user{
+   margin-left: 82%;
+   border-radius: 5px;
+   font-size: 20px;
+ }
+
+ .sideBtn {
+   color: white;
+ }

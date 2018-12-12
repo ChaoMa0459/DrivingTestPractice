@@ -26,11 +26,16 @@ exports.search = function (params, callback) {
 };
 
 
-exports.get = function (username, callback) {
+exports.update = function (question, callback) {
   let resultCallback = function (err, user) {
     throwError(err);
     callback(user);
   };
-  User.findByUsername(username, resultCallback);
+  user.modified_date = new Date();
+  User.findOneAndUpdate({
+    _id: user._id
+  }, user, {
+    new: true
+  }, resultCallback);
 };
 

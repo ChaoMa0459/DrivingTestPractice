@@ -33,3 +33,13 @@ exports.get = function (request, response) {
   };
   userService.search({username: request.params.username}, callback);
 };
+
+exports.put = function (request, response) {
+  let user = Object.assign({}, request.body),
+    callback = function (question) {
+      response.status(200);
+      response.json(user);
+    };
+  user._id = request.params.userId;
+  userService.update(user, callback);
+};

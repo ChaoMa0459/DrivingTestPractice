@@ -36,7 +36,7 @@
     </div>
 
     <div *ngIf="submitted" class="well">
-        <strong class="result">Congratulations! You got {{ correctCount }}/{{questions.length}} right!</strong>
+        <strong class="result">Congratulations! You got {{ correctCount }}/{{ correctCount + wrongCount }} right!</strong>
     </div>
 
     <div *ngIf="questions.length <= 0" class="well">

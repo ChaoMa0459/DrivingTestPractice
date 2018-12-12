@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ResultList } from './history-table.model';
+import { Result } from './history-table.model';
 import { ResultListService } from './history-table.service';
 import { Subscription } from "rxjs";
 
@@ -14,13 +14,14 @@ export class HistoryTableComponent implements OnInit {
   data: object;
   displayedColumns: string[] = ['position', 'rightNum', 'totalNum', 'percentage'];
   dataSource = [];
+  username = 'kai';
 
   constructor(public resultService: ResultListService) {
 
   }
 
   ngOnInit() {
-    this.resultService.getResultList("kai").subscribe((data: object) => {
+    this.resultService.getResultList(this.username).subscribe((data: object) => {
 
       this.data = data;
       console.log('this.data:', this.data);
@@ -36,7 +37,7 @@ export class HistoryTableComponent implements OnInit {
         'position': i + 1,
         'rightNum': this.data[i].rightNum,
         'totalNum': this.data[i].totalNum,
-        'percentage': this.data[i].rightNum / this.data[i].rightNum,
+        'percentage': this.data[i].rightNum / this.data[i].totalNum,
       };
       this.dataSource[i] = resItem;
     }

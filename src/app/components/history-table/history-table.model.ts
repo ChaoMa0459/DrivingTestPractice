@@ -1,6 +1,5 @@
-export interface ResultList {
-    position: number;
+export interface Result {
+    username: string;
     rightNum: number;
     totalNum: number;
-    percentage: number;
 }

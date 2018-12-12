@@ -1,0 +1,27 @@
+:host{
+  margin-top: 16px;
+}
+
+.info-text{
+  text-align: center;
+}
+mat-card{
+  width: 80%;
+  margin: auto;
+
+}
+mat-form-field, textarea{
+  width: 100%;
+
+}
+
+p{
+  width: 30%;
+}
+
+button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  //float: left;
+}
+

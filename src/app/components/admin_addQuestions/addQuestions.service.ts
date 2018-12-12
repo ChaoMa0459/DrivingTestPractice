@@ -28,7 +28,7 @@ export class AddQuestionService {
   addQuestion(question: Question){
     this.questions.push(question);
     this.questionsUpdate.next([...this.questions]);
-    this.http.post(`${this.uri}/add`, question)
+    this.http.post(`${this.uri}`, question)
       .subscribe(res => console.log('Done'));
   }
 }
